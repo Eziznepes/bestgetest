@@ -1,0 +1,249 @@
+h4 {
+  &.prc {
+    font-family: $calibri;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1;
+    color: #383838;
+    span {
+      margin-left: 10px;
+      display: inline-block;
+      font-size: 19px;
+      color: #fd384f;
+    }
+  }
+}
+h5 {
+  font-size: 25px;
+  font-family: $calibri;
+  line-height: 1.2;
+  color: #383838;
+  font-weight: 700;
+  &.sm {
+    font-size: 23px;
+    letter-spacing: -0.02em;
+    color: #383838;
+    font-weight: 400;
+    font-family: $calibri;
+  }
+  &.xsm {
+    font-size: 21px;
+    line-height: 1.2;
+    font-family: $calibri;
+    font-weight: 400;
+    letter-spacing: unset;
+    color: #383838;
+  }
+}
+h6 {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  font-family: $mainFont;
+  color: $white;
+  font-weight: 400;
+  line-height: 1.2;
+  &.xbig {
+    font-size: 20px;
+    letter-spacing: unset;
+    font-weight: 400;
+    font-family: $calibri;
+    color: #383838;
+  }
+  &.big {
+    font-family: $calibri;
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+    color: #383838;
+  }
+  &.sm {
+    font-family: $calibri;
+    font-size: 17px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #383838;
+    font-weight: 700;
+  }
+  &.xsm {
+    font-family: $calibri;
+    font-size: 16px;
+    line-height: 20px;
+    color: #434343;
+    font-weight: 700;
+  }
+  &.xsmr {
+    font-family: $mainFont;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: $black;
+  }
+}
+p {
+  font-family: $calibri;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #757575;
+  &.big {
+    font-family: $calibri;
+    font-size: 19px;
+    line-height: 37px;
+    font-weight: 400;
+    color: #757575;
+  }
+  &.xbig {
+    font-family: $calibri;
+    font-size: 20px;
+    line-height: 37px;
+    font-weight: 400;
+    color: #757575;
+  }
+  &.sm {
+    font-family: $calibri;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: unset;
+    color: #2e2e2e;
+  }
+  &.xsm {
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: -0.02em;
+    font-family: $calibri;
+    font-weight: 300;
+    color: #383838;
+  }
+}
+main {
+  padding-top: 140.8px;
+}
+.button {
+  cursor: pointer;
+  @include transition;
+  box-sizing: border-box;
+  width: 100%;
+  &:hover {
+    opacity: 0.8;
+  }
+  &.primary {
+    padding: 12px 0;
+    border-radius: 50px;
+    font-size: 17px;
+    line-height: 1;
+    font-family: $mainFont;
+    font-weight: 700;
+    color: $white;
+    background: #fd384f;
+    &.light {
+      background: #fff3f3;
+      color: #fd384f;
+      font-weight: 400;
+    }
+  }
+  &.secondary {
+    font-size: 19px;
+    line-height: 1;
+    font-family: $calibri;
+    font-weight: 400;
+    color: #383838;
+    background: $white;
+    border-radius: 5px;
+    border: 2px solid #0090e3;
+    box-sizing: border-box;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    max-width: 241px;
+  }
+}
+.langSelect {
+  margin-right: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 1px;
+    height: 20px;
+    background: #c5c5c5;
+    @include transformY;
+  }
+  &__selected {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.2;
+    font-family: $calibri;
+    font-weight: 300;
+    img {
+      width: 25px;
+      height: 16px;
+      margin-right: 4px;
+    }
+    svg {
+      width: 10px;
+      height: 10px;
+      color: #adadad;
+      margin-left: 20px;
+    }
+  }
+}
+.stars {
+  position: relative;
+  width: 100px;
+  &__empty {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100%;
+    }
+  }
+  &__filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    img {
+      width: 100px;
+    }
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes stickybar {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes sticky {
+  from {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

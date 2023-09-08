@@ -1,0 +1,119 @@
+.footer {
+  &__inner {
+    padding: 28px 16px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__left {
+    width: calc(36% - 50px);
+    &-info {
+      margin-bottom: 116px;
+    }
+    &-text {
+      font-family: $calibri;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.2;
+      color: #646464;
+      span {
+        font-weight: 400;
+      }
+    }
+    &-socials {
+      &-title {
+        font-size: 17px;
+        line-height: 1.2;
+        color: $black;
+        font-family: $mainFont;
+        font-weight: 500;
+        margin-bottom: 16px;
+      }
+      &-inner {
+        display: flex;
+        align-items: center;
+      }
+      &-item {
+        width: 31px;
+        height: 31px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #7b7b7b;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 5px;
+        @include transition;
+        &:hover {
+          opacity: 0.8;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        svg {
+          width: 16px;
+          height: 16px;
+          color: $white;
+        }
+      }
+    }
+  }
+  &__right {
+    padding-top: 50px;
+    width: calc(64% - 50px);
+    display: flex;
+    justify-content: space-between;
+    &-col {
+      width: calc(33.33% - 16px);
+      h6 {
+        margin-bottom: 8px;
+      }
+      &-link {
+        cursor: pointer;
+        display: block;
+        @include transition;
+        font-family: $calibri;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 24px;
+        color: #9d9d9d;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      &-title {
+        font-size: 18px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        font-family: $calibri;
+        font-weight: 400;
+        color: #383838;
+        margin-bottom: 4px;
+      }
+      &-extra {
+        cursor: pointer;
+        display: block;
+        @include transition;
+        font-family: $calibri;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: #383838;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+  &__logo {
+    width: 81px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    img {
+      width: 100%;
+    }
+  }
+}
