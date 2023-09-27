@@ -6,6 +6,7 @@ export default function Stickybar() {
   const [scrollWidth, setScrollWidth] = useState(0);
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
+    onScroll();
   }, []);
   const start = 350;
   const onScroll = () => {
@@ -26,17 +27,48 @@ export default function Stickybar() {
             className="stickybar__scroll"
             style={{ width: `${scrollWidth}%` }}
           ></div>
-          <div className="stickybar__item">
-            {checkSvg}
-            <span>Gratis</span> bezorging in Nederland
+          <div className="stickybar__box">
+            <div className="stickybar__box-image">
+              <div className="stickybar__box-image-icon">
+                <img src="images/icons/like.png" alt="" />
+              </div>
+              <div className="stickybar__box-image-inner">
+                <img src="images/product/1.png" alt="" />
+              </div>
+            </div>
+            <div className="stickybar__box-content">
+              <div className="stickybar__box-content-left">
+                <h6>Hi-Fi Bausus Howie D05</h6>
+                <div className="stickybar__box-content-left-row">
+                  <div className="stickybar__box-content-left-rating">
+                    <img src="images/icons/star.png" alt="" /> <span> 4.7</span>
+                  </div>
+                  <h4 className="prc">
+                    €59,95 <span>€159,95</span>
+                  </h4>
+                  <div className="stickybar__box-content-left-tag">
+                    Top deal
+                  </div>
+                </div>
+              </div>
+              <button className="stickybar__box-content-btn">
+                Direct kopen
+              </button>
+            </div>
           </div>
-          <div className="stickybar__item">
-            {checkSvg}
-            <span>Gratis</span> ruilen binnen 30 dagen
-          </div>
-          <div className="stickybar__item">
-            {checkSvg}
-            <span>Gratis</span> retourneren
+          <div className="stickybar__items">
+            <div className="stickybar__item">
+              {checkSvg}
+              <span>Gratis </span> bezorging in Nederland
+            </div>
+            <div className="stickybar__item">
+              {checkSvg}
+              <span>Gratis </span> ruilen binnen 30 dagen
+            </div>
+            <div className="stickybar__item">
+              {checkSvg}
+              <span>Gratis </span> retourneren
+            </div>
           </div>
         </div>
       </div>

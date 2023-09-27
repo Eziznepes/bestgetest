@@ -1,3 +1,10 @@
+@mixin ellipsis($line: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 @mixin transition {
   transition: all 0.2s ease-in-out 0s;
   -moz-transition: all 0.2s ease-in-out 0s;
@@ -72,6 +79,11 @@
   -o-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   -moz-transform: rotate(270deg);
+}
+@mixin xxsm-xsm {
+  @media (max-width: 440px) {
+    @content;
+  }
 }
 @mixin xsm-sm {
   @media (max-width: 540px) {

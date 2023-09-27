@@ -2,8 +2,10 @@
   &__inner {
     padding: 28px 16px;
     box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__left {
     width: calc(36% - 50px);
@@ -65,8 +67,13 @@
     justify-content: space-between;
     &-col {
       width: calc(33.33% - 16px);
-      h6 {
-        margin-bottom: 8px;
+      &-btn {
+        h6 {
+          margin-bottom: 8px;
+        }
+        svg {
+          display: none;
+        }
       }
       &-link {
         cursor: pointer;
@@ -114,6 +121,135 @@
     margin-bottom: 18px;
     img {
       width: 100%;
+    }
+  }
+}
+@mixin footer-xlg-xxlg {
+  .footer {
+    &__left {
+      width: 140px;
+      &-info {
+        margin-bottom: 50px;
+      }
+    }
+    &__right {
+      padding-top: 0;
+      width: calc(100% - 180px);
+      &-col {
+        width: calc(33.33% - 8px);
+        &-title {
+          font-size: 16px;
+        }
+        &-extra {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+@mixin footer-md-lg {
+  .footer {
+    padding-bottom: 115px;
+    &__inner {
+      padding: 28px 0;
+    }
+    &__right {
+      width: calc(100% - 160px);
+    }
+  }
+}
+@mixin footer-sm-md {
+  .footer {
+    &__inner {
+      &-wrapper {
+        flex-direction: column;
+      }
+    }
+    &__left {
+      order: 2;
+      &-info {
+        margin-bottom: 24px;
+      }
+    }
+    &__right {
+      width: 100%;
+      order: 1;
+      margin-bottom: 24px;
+    }
+  }
+}
+@mixin footer-xsm-sm {
+  .footer {
+    padding-bottom: 85px;
+    &__right {
+      flex-direction: column;
+      &-col {
+        width: 100%;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #d7d7d7;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &-title {
+          font-size: 15px;
+          line-height: 30px;
+          color: #9d9d9d;
+        }
+        &-extra {
+          color: #9d9d9d;
+          font-size: 15px;
+          line-height: 30px;
+        }
+        &-link {
+          font-size: 15px;
+          line-height: 30px;
+        }
+        &-btn {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          @include transition;
+          h6 {
+            @include transition;
+            margin-bottom: 0;
+            font-family: $calibri;
+            font-weight: 700;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+          svg {
+            width: 14px;
+            height: 14px;
+            display: block;
+            color: $black;
+            @include transition;
+          }
+          &.active {
+            h6 {
+              color: #2196f3;
+            }
+            svg {
+              transform: rotate(-180deg);
+            }
+          }
+        }
+        &-content {
+          opacity: 0;
+          max-height: 0;
+          visibility: hidden;
+          @include transition;
+          &.active {
+            padding-top: 8px;
+            opacity: 1;
+            max-height: 300px;
+            overflow-y: auto;
+            visibility: visible;
+          }
+        }
+      }
     }
   }
 }

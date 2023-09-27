@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useState } from "react";
 import Footer from "../base/Footer";
 import Header from "../base/Header";
 import Stickybar from "../base/Stickybar";
@@ -8,6 +10,12 @@ import ContentSpec from "./components/Wrapper/Content/Spec/ContentSpec";
 import SideMain from "./components/Wrapper/Side/Main/SideMain";
 import SideReview from "./components/Wrapper/Side/Review/SideReview";
 import Wrapper from "./components/Wrapper/Wrapper";
+import { AnimatePresence } from "framer-motion";
+import Discount from "../base/Modals/Discount";
+import Delivery from "../base/Modals/Delivery";
+import Promo from "../base/Modals/Promo";
+import Together from "../base/Modals/Together";
+import BotStickybar from "../base/BotStickybar";
 
 const product = {
   id: "1",
@@ -37,6 +45,7 @@ const product = {
         "images/product/1-black.png",
         "images/product/1-black.png",
         "images/product/1-black.png",
+        "images/product/1-black.png",
       ],
     },
     {
@@ -47,12 +56,25 @@ const product = {
         "images/product/2.png",
         "images/product/3.png",
         "images/product/4.png",
+        "images/product/4.png",
       ],
     },
   ],
 };
 
-export default function Index() {
+export default function Page() {
+  const [discount, setDiscount] = useState(true);
+  const [delivery, setDelivery] = useState(true);
+  const [promo, setPromo] = useState(true);
+  const [together, setTogether] = useState(true);
+  useEffect(() => {
+    if (discount || delivery || promo || together) {
+      document.body.classList.add("active");
+    } else {
+      document.body.classList.remove("active");
+    }
+  }, [discount, delivery, promo, together]);
+
   return (
     <>
       <Header />
@@ -72,6 +94,18 @@ export default function Index() {
         <Features />
       </main>
       <Footer />
+      <AnimatePresence>
+        {discount && <Discount setDiscount={setDiscount} />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {delivery && <Delivery setDelivery={setDelivery} />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {promo && <Promo setPromo={setPromo} />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {together && <Together setTogether={setTogether} />}
+      </AnimatePresence>
     </>
   );
 }

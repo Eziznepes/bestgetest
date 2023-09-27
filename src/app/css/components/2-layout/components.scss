@@ -1,5 +1,47 @@
+h1 {
+  &.sm {
+    font-family: $mainFont;
+    font-size: 34px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    font-weight: 900;
+    color: #383838;
+  }
+}
+h2 {
+  &.xsm {
+    font-family: $mainFont;
+    font-size: 30px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #383838;
+  }
+  &.sm {
+    font-family: $mainFont;
+    font-size: 47px;
+    line-height: 1;
+    font-weight: 900;
+    color: #202020;
+    letter-spacing: -0.06em;
+  }
+}
 h4 {
+  font-family: $mainFont;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  color: #383838;
+  &.big {
+    font-size: 27px;
+    font-family: $calibri;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0c0c0e;
+  }
   &.prc {
+    letter-spacing: unset;
     font-family: $calibri;
     font-weight: 700;
     font-size: 28px;
@@ -32,6 +74,14 @@ h5 {
     font-family: $calibri;
     font-weight: 400;
     letter-spacing: unset;
+    color: #383838;
+  }
+  &.uniq {
+    font-family: $mainFont;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
     color: #383838;
   }
 }
@@ -79,6 +129,14 @@ h6 {
     letter-spacing: -0.02em;
     color: $black;
   }
+  &.uniq {
+    font-family: $mainFont;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: unset;
+    color: #4f4f4f;
+  }
 }
 p {
   font-family: $calibri;
@@ -114,6 +172,23 @@ p {
     font-family: $calibri;
     font-weight: 300;
     color: #383838;
+  }
+  &.uniq {
+    font-family: $calibri;
+    line-height: 25px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #383838;
+    letter-spacing: unset;
+  }
+}
+.anchor {
+  position: relative;
+  top: -200px;
+}
+body {
+  &.active {
+    overflow: hidden;
   }
 }
 main {
@@ -219,6 +294,183 @@ main {
     }
   }
 }
+.customSelect {
+  position: relative;
+  z-index: 2;
+  &__selected {
+    color: #373737;
+    position: relative;
+    width: 100%;
+    font-family: $calibri;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    box-sizing: border-box;
+    padding: 9px 22px 9px 18px;
+    background: $white;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    img {
+      width: 30px;
+      margin-right: 20px;
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      @include transformY;
+      width: 10px;
+      height: 10px;
+    }
+  }
+  &__options {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    @include transition;
+    &-item {
+      position: relative;
+      width: 100%;
+      font-family: $calibri;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 22px;
+      color: #373737;
+      box-sizing: border-box;
+      padding: 9px 18px;
+      background: $white;
+      border-bottom: 1px solid #cfcfcf;
+      cursor: pointer;
+      @include transition;
+      display: flex;
+      align-items: center;
+      img {
+        width: 30px;
+        margin-right: 20px;
+      }
+      &:hover {
+        background: #f5f1f0;
+      }
+      &:last-child {
+        border-bottom: 0;
+        border-radius: 0 0 8px 8p;
+      }
+    }
+  }
+  &.active {
+    z-index: 3;
+
+    .customSelect__selected {
+      border-radius: 5px 5px 0 0;
+    }
+    .customSelect__options {
+      max-height: 400px;
+      overflow: auto;
+      opacity: 1;
+      border: 1px solid #cfcfcf;
+      border-radius: 0 0 5px 5px;
+    }
+  }
+}
+.input {
+  input {
+    width: 100%;
+    border: 1px solid #cfcfcf;
+    box-sizing: border-box;
+    font-family: $calibri;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    color: #373737;
+    padding: 9px 18px;
+    border-radius: 5px;
+    &::placeholder {
+      color: #8b8b8b;
+    }
+  }
+  &__row {
+    width: 100%;
+    display: flex;
+    .input {
+      &:first-child {
+        width: 75px;
+        input {
+          border-right: unset;
+          border-radius: 5px 0 0 5px;
+        }
+      }
+      &:nth-child(2) {
+        width: calc(100% - 75px);
+        input {
+          border-radius: 0 5px 5px 0;
+        }
+      }
+    }
+  }
+}
+.checkbox {
+  position: relative;
+  padding-left: 30px;
+  box-sizing: border-box;
+  input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    appearance: none;
+    z-index: 1;
+    cursor: pointer;
+    &:checked + label {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  label {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #cfcfcf;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    @include transformY;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 6px;
+      width: 4px;
+      height: 8px;
+      border-bottom: 2px solid #ff5a0d;
+      border-right: 2px solid #ff5a0d;
+      transform: rotate(45deg);
+      z-index: 1;
+      @include transition;
+      opacity: 0;
+    }
+  }
+  p {
+    font-size: 17px;
+    line-height: 20px;
+    font-family: $calibri;
+    font-weight: 300;
+    letter-spacing: unset;
+    color: #8b8b8b;
+  }
+}
 @keyframes appear {
   from {
     opacity: 0;
@@ -230,6 +482,16 @@ main {
 @keyframes stickybar {
   from {
     transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes stickybar2 {
+  from {
+    transform: translateY(100%);
     opacity: 0;
   }
   to {

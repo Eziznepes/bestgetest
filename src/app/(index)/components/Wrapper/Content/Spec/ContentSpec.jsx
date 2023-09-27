@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ContentSpecItems from "./ContentSpecItems";
 
 const specList = [
@@ -112,14 +112,23 @@ const specList = [
 ];
 
 export default function ContentSpec() {
+  const [showAll, setSetshowAll] = useState(false);
   return (
     <div className="content">
       <div className="contentSpec">
         <h5>Specificaties</h5>
-        <div className="contentSpec__inner">
-          {specList.map((item, index) => {
-            return <ContentSpecItems {...item} key={index} />;
-          })}
+        <div className={"contentSpec__inner " + (showAll ? "active" : "")}>
+          <div className="contentSpec__wrapper">
+            {specList.map((item, index) => {
+              return <ContentSpecItems {...item} key={index} />;
+            })}
+          </div>
+          <button
+            className="button secondary"
+            onClick={() => setSetshowAll(!showAll)}
+          >
+            Lees meer
+          </button>
         </div>
       </div>
     </div>

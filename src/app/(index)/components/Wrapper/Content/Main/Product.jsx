@@ -1,3 +1,4 @@
+import BotStickybar from "@/app/base/BotStickybar";
 import { heartIcon2, shipmentIcon } from "@/app/base/SVG";
 import { formatCurrency } from "@/app/base/globalFunc";
 import React, { useState } from "react";
@@ -26,16 +27,16 @@ export default function Product({ product }) {
     arrows: false,
     centerMode: false,
     focusOnSelect: true,
-    // responsive: [
-    //   {
-    //     breakpoint: 540,
-    //     settings: {
-    //       slidesToShow: 4,
-    //       slidesToScroll: 1,
-    //       arrows: false,
-    //     },
-    //   },
-    // ],
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          arrows: false,
+        },
+      },
+    ],
   };
   return (
     <div className="contentMain__product">
@@ -94,6 +95,31 @@ export default function Product({ product }) {
         </div>
       </div>
       <div className="contentMain__product-details">
+        <div className="contentMain__product-details-extra">
+          <div className="contentMain__product-details-extra-item">
+            <div className="contentMain__product-details-extra-item-title">
+              Ideaal voor:
+            </div>
+            <div className="contentMain__product-details-extra-item-images">
+              <div className="contentMain__product-details-extra-item-image">
+                <img src="images/logo/iphone.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="contentMain__product-details-extra-item">
+            <div className="contentMain__product-details-extra-item-title">
+              Bekend van:
+            </div>
+            <div className="contentMain__product-details-extra-item-images">
+              <div className="contentMain__product-details-extra-item-image">
+                <img src="images/logo/tiktok.png" alt="" />
+              </div>
+              <div className="contentMain__product-details-extra-item-image">
+                <img src="images/logo/instagram.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
         <h6 className="big">{product.title}</h6>
         <p>{product.desc}</p>
         <div className="contentMain__product-details-row">
@@ -121,6 +147,7 @@ export default function Product({ product }) {
           {shipmentIcon}
           Gratis levering <span>in 12 dagen</span> gratis retourneren
         </div>
+        <BotStickybar />
         <div className="contentMain__product-details-info">
           <div className="contentMain__product-details-price">
             <div className="contentMain__product-details-price-inner">
@@ -141,7 +168,7 @@ export default function Product({ product }) {
               </h4>
               {product.off && (
                 <div className="contentMain__product-details-price-off">
-                  - {product.off}%
+                  - {product.off}% <span>Korting</span>
                 </div>
               )}
             </div>

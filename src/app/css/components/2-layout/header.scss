@@ -19,6 +19,9 @@
         font-weight: 900;
         color: #ffe400;
       }
+      &.mob {
+        display: none;
+      }
     }
   }
   &__top {
@@ -139,6 +142,120 @@
         width: 100%;
       }
     }
+    &-right {
+      display: flex;
+      align-items: center;
+    }
   }
 }
-
+@mixin header-lg-xlg {
+  .header {
+    &__promo {
+      h6 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+    &__bot {
+      &-logo {
+        width: 90px;
+      }
+      &-cart {
+        width: 20px;
+        height: 20px;
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+        &-number {
+          font-size: 10px;
+          min-width: 13px;
+          min-height: 13px;
+          line-height: 13px;
+        }
+      }
+    }
+  }
+}
+@mixin header-md-lg {
+  .header {
+    &__top {
+      display: none;
+    }
+    &__bot {
+      position: relative;
+      order: 1;
+      box-shadow: 0px 6px 7px 0px rgba(104, 0, 12, 0.27);
+      &-logo {
+        width: 110px;
+      }
+      &-cart {
+        width: 30px;
+        height: 30px;
+        margin-right: 24px;
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+        order: 1;
+        // display: none;
+      }
+    }
+    &__promo {
+      position: relative;
+      box-shadow: 0px 9px 6px 0px rgba(32, 25, 24, 0.14);
+      background: rgb(253, 70, 91);
+      background: linear-gradient(
+        130deg,
+        rgba(253, 70, 91, 1) 0%,
+        rgba(253, 56, 79, 1) 100%
+      );
+      order: 2;
+      h6 {
+        &.pc {
+          display: none;
+        }
+        &.mob {
+          display: block;
+        }
+      }
+    }
+    &__inner {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+@mixin header-xsm-sm {
+  .header {
+    &__promo {
+      padding: 6px 0;
+      h6 {
+        font-size: 14px;
+      }
+    }
+    &__bot {
+      &-logo {
+        width: 90px;
+      }
+      &-cart {
+        display: none;
+      }
+    }
+  }
+}
+@mixin header-xxsm-xsm {
+  .header {
+    &__bot {
+      &-logo {
+        width: 80px;
+        padding-bottom: 8px;
+      }
+    }
+    &__promo {
+      h6 {
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -7,33 +7,33 @@ export default function SideMain({ product }) {
   const [amount, setAmount] = useState(1);
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
+    onScroll();
   }, []);
   const onScroll = () => {
-    console.log(document.getElementById("header").offsetHeight);
+    let header = document.getElementById("header");
+    let wrapper1 = document.getElementById("wrapper1");
+    let wrapper2 = document.getElementById("wrapper2");
+    let side1 = document.getElementById("side1");
+    let side2 = document.getElementById("side2");
+    let stickybar = document.getElementById("stickybar");
     if (
       window.scrollY >=
-        document.getElementById("wrapper1").offsetTop -
-          document.getElementById("header").offsetHeight &&
+        wrapper1.offsetTop - header.offsetHeight - stickybar.offsetHeight &&
       window.scrollY <
-        document.getElementById("wrapper2").offsetTop -
-          document.getElementById("header").offsetHeight
+        wrapper2.offsetTop - header.offsetHeight - stickybar.offsetHeight
     ) {
-      document.getElementById("side1").classList.add("sticky");
-      // document.getElementById("side2").classList.remove("sticky2");
+      side1.classList.add("sticky");
+      side2.classList.remove("sticky");
     } else if (
       window.scrollY >=
-      document.getElementById("wrapper2").offsetTop -
-        document.getElementById("header").offsetHeight
+      wrapper2.offsetTop - header.offsetHeight - stickybar.offsetHeight
     ) {
-      document.getElementById("side1").classList.remove("sticky");
-      // document.getElementById("side2").classList.add("sticky2");
-    } else {
-      document.getElementById("side1").classList.remove("sticky");
-      // document.getElementById("side2").classList.remove("sticky2");
+      side1.classList.remove("sticky");
+      side2.classList.add("sticky");
     }
   };
   return (
-    <div className="side" id="side1">
+    <div className="side pc " id="side1">
       <div className="sideMain">
         <div className="sideMain__title">
           <h6 className="sm">Wordt verzonden naar</h6>

@@ -1,0 +1,86 @@
+.cards {
+  display: flex;
+  width: calc(100% + 12px);
+  margin: 0 -6px;
+  flex-wrap: wrap;
+  &Item {
+    padding: 16px;
+    box-sizing: border-box;
+    width: calc(25% - 12px);
+    margin: 6px;
+    background: $white;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 15px;
+    &__image {
+      margin-bottom: 16px;
+      &-inner {
+        width: 100%;
+        position: relative;
+        padding-bottom: 100%;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    &__content {
+      h6 {
+        &.xbig {
+          color: #fd384f;
+          letter-spacing: -0.02em;
+          font-weight: 700;
+          margin-bottom: 6px;
+        }
+        &.xsm {
+          font-weight: 700;
+          color: #383838;
+          letter-spacing: -0.02em;
+          margin-bottom: 3px;
+          @include ellipsis(2);
+        }
+      }
+      p {
+        letter-spacing: -0.02em;
+        color: #383838;
+      }
+      &-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3px;
+        p {
+          margin-right: 20px;
+        }
+      }
+      &-rating {
+        display: flex;
+        align-items: center;
+        p {
+          margin-right: 0 !important;
+        }
+        img {
+          width: 14px;
+          height: 14px;
+          margin-right: 4px;
+        }
+      }
+      &-ship {
+        p {
+          color: #2b9800;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+@mixin cards-xxlg-xxxlg {
+  .cards {
+    flex-wrap: wrap;
+    &Item {
+      padding: 12px;
+    }
+  }
+}

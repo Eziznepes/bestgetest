@@ -1,0 +1,144 @@
+// 1340px
+@include xxlg-xxxlg {
+  // base start
+  h4 {
+    &.prc {
+      font-size: 24px;
+      span {
+        margin-left: 5px;
+        font-size: 16px;
+      }
+    }
+  }
+  h6 {
+    &.xbig {
+      font-size: 18px;
+    }
+  }
+  .auto__container {
+    padding: 0 40px;
+  }
+  // base end
+  //   index page start
+  @include content-xxlg-xxxlg;
+  @include side-xxlg-xxxlg;
+  @include cards-xxlg-xxxlg;
+  //   index page end
+}
+// 1180px
+@include xlg-xxlg {
+  // base start
+  h6 {
+    &.big {
+      font-size: 16px;
+    }
+  }
+  @include nav-xlg-xxlg;
+  @include footer-xlg-xxlg;
+  // base end
+  //   index page start
+  @include content-xlg-xxlg;
+  @include side-xlg-xxlg;
+  @include features-xlg-xxlg;
+  //   index page end
+}
+// 1024px
+@include lg-xlg {
+  // base start
+  @include header-lg-xlg;
+  @include nav-lg-xlg;
+  main {
+    padding-top: 129.88px;
+  }
+  // base end
+  //   index page start
+  @include stickybar-lg-xlg;
+  @include content-lg-xlg;
+  @include side-lg-xlg;
+  @include modal-lg-xlg;
+  //   index page end
+}
+// 840px
+@include md-lg {
+  // base start
+  .auto__container {
+    padding: 0 24px;
+  }
+  @include header-md-lg;
+  @include nav-md-lg;
+  @include footer-md-lg;
+  main {
+    padding-top: 100px;
+  }
+  // base end
+  //   index page start
+  @include stickybar-md-lg;
+  @include wrapper-md-lg;
+  @include content-md-lg;
+  @include side-md-lg;
+  @include botstickybar-md-lg;
+  @include modal-md-lg;
+  //   index page end
+}
+// 700px
+@include sm-md {
+  // base start
+  @include footer-sm-md;
+  // base end
+  //   index page start
+  @include stickybar-sm-md;
+  @include content-sm-md;
+  @include features-sm-md;
+  @include side-sm-md;
+  //   index page end
+}
+// 540px
+@include xsm-sm {
+  // base start
+  main {
+    padding-top: 85.08px;
+  }
+  @include header-xsm-sm;
+  @include nav-xsm-sm;
+  @include footer-xsm-sm;
+  // base end
+  //   index page start
+  @include stickybar-xsm-sm;
+  @include content-xsm-sm;
+  @include botstickybar-xsm-sm;
+  @include features-xsm-sm;
+  @include side-xsm-sm;
+  @include modal-xsm-sm;
+  //   index page end
+}
+// 440px
+@include xxsm-xsm {
+  // base start
+  h5 {
+    font-size: 22px;
+    &.sm {
+      font-size: 20px;
+    }
+  }
+  main {
+    padding-top: 76.63px;
+  }
+  .button {
+    &.secondary {
+      font-size: 16px;
+      padding: 10px 0;
+      max-width: 180px;
+    }
+  }
+  @include header-xxsm-xsm;
+  @include nav-xxsm-xsm;
+  // base end
+  //   index page start
+  @include stickybar-xxsm-xsm;
+  @include content-xxsm-xsm;
+  @include botstickybar-xxsm-xsm;
+  @include features-xxsm-xsm;
+  @include side-xxsm-xsm;
+  @include modal-xxsm-xsm;
+  //   index page end
+}
