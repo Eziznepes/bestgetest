@@ -3635,8 +3635,12 @@ main {
   -moz-transition: all 0.2s ease-in-out 0s;
 }
 .contentMain__desc-inner.active {
-  max-height: 1000px;
+  max-height: 2000px;
   overflow: unset;
+  padding-bottom: 50px;
+}
+.contentMain__desc-inner.active .contentMain__desc-image-text {
+  display: block;
 }
 .contentMain__desc-inner h5 {
   margin-bottom: 10px;
@@ -3647,22 +3651,112 @@ main {
 .contentMain__desc-inner p {
   margin-bottom: 24px;
 }
-.contentMain__desc-image {
-  width: 100%;
+.contentMain__desc-inner h6 {
+  line-height: 37px;
+  font-weight: 700;
+  color: #505050;
+  letter-spacing: unset;
+  margin-bottom: 28px;
+}
+.contentMain__desc-inner h6.xbig {
+  font-size: 20px;
+}
+.contentMain__desc-inner h6.mbs {
+  margin-bottom: 12px;
+}
+.contentMain__desc-items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: calc(100% + 12px);
+  margin: 0 -6px 56px -6px;
+}
+.contentMain__desc-item {
+  width: calc(33.33% - 6px);
+  margin: 6px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 7px 35px 0px rgba(32, 25, 24, 0.04);
+          box-shadow: 0px 7px 35px 0px rgba(32, 25, 24, 0.04);
+}
+.contentMain__desc-item-image {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding-bottom: 100%;
+}
+.contentMain__desc-item-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.contentMain__desc-iframe {
+  width: 100%;
+  position: relative;
+  padding-bottom: 55.9%;
+}
+.contentMain__desc-iframe iframe {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.contentMain__desc-image {
+  width: 100%;
+  position: relative;
+  padding-bottom: 52.94%;
   border-radius: 40px;
   overflow: hidden;
+  margin-bottom: 32px;
 }
 .contentMain__desc-image img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.contentMain__desc-image-text {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  -moz-ransform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.contentMain__desc-image-text-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 42px;
+  letter-spacing: -0.06em;
+  line-height: 37px;
+  color: #fff;
+}
+.contentMain__desc-image-text-title span {
+  font-weight: 100;
+}
+.contentMain__desc-image-text-subtitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.06em;
+  line-height: 37px;
+  color: #fff;
+}
+.contentMain__desc-image-text-subtitle span {
+  font-weight: 100;
 }
 .contentMain__desc .button {
   position: absolute;
@@ -5097,8 +5191,26 @@ main {
   .contentMain__pros-col:last-child {
     margin-bottom: 0;
   }
+  .contentMain__desc-items {
+    margin: 0 -6px 36px -6px;
+  }
+  .contentMain__desc-inner h6 {
+    margin-bottom: 16px;
+  }
   .contentMain__desc-image {
     border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .contentMain__desc-image-text {
+    right: 20px;
+  }
+  .contentMain__desc-image-text-title {
+    font-size: 36px;
+    line-height: 30px;
+  }
+  .contentMain__desc-image-text-subtitle {
+    font-size: 18px;
+    line-height: 30px;
   }
   .contentMain__offers-inner {
     -webkit-box-orient: vertical;
@@ -5969,6 +6081,9 @@ main {
   .contentMain__offers-col-tag {
     top: -45px;
     font-size: 20px;
+  }
+  .contentMain__desc-image-text {
+    right: 5%;
   }
   .contentReview__spec-avatar {
     width: 70px;
@@ -7108,6 +7223,10 @@ main {
     font-size: 16px;
     line-height: 30px;
     margin-bottom: 16px;
+  }
+  .contentMain__desc-inner h6 {
+    font-size: 18px !important;
+    line-height: 24px;
   }
   .contentMain__pros-item h6 {
     font-size: 16px;

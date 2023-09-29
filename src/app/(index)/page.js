@@ -63,10 +63,10 @@ const product = {
 };
 
 export default function Page() {
-  const [discount, setDiscount] = useState(true);
-  const [delivery, setDelivery] = useState(true);
-  const [promo, setPromo] = useState(true);
-  const [together, setTogether] = useState(true);
+  const [discount, setDiscount] = useState(false);
+  const [delivery, setDelivery] = useState(false);
+  const [promo, setPromo] = useState(false);
+  const [together, setTogether] = useState(false);
   useEffect(() => {
     if (discount || delivery || promo || together) {
       document.body.classList.add("active");
